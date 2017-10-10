@@ -1,0 +1,23 @@
+INDEX VERSION 1.127
+D:\JAVA\BlogUsingCoreJava\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4181546024.index
+\myBlog\src
+D:\JAVA\BlogUsingCoreJava\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4152416498.index
+\myBlog\src
+D:\JAVA\BlogUsingCoreJava\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1020586580.index
+\myBlog\src
+D:\JAVA\BlogUsingCoreJava\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1308789640.index
+\myBlog\src
+D:\JAVA\BlogUsingCoreJava\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2612763662.index
+\myBlog\src
+D:\JAVA\BlogUsingCoreJava\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4157355389.index
+\StartingJsp_00\src
+D:\JAVA\BlogUsingCoreJava\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1041584086.index
+\myBlog\src
+D:\JAVA\BlogUsingCoreJava\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\951045280.index
+\myBlog\src
+D:\JAVA\BlogUsingCoreJava\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4156478113.index
+\myBlog\src
+D:\JAVA\BlogUsingCoreJava\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4120786145.index
+\myBlog\src
+D:\JAVA\BlogUsingCoreJava\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\399413964.index
+\StartingJsp_00\src

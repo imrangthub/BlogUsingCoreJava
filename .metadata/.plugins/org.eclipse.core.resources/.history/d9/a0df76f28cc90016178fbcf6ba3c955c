@@ -1,0 +1,5 @@
+package usebean;
+
+public class MessageBean {
+
+}

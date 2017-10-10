@@ -1,0 +1,197 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@page import="com.dao.postsCls"%>
+<%@page import="com.dao.adminCls" %>
+<%@page import="com.Models.adminModel" %>
+<%@page import="com.Models.PostsModel"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.dao.categoryCls" %>
+<%@page import="com.Models.CategoryModel" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<title>Admin | Create </title>
+<style>
+.upDownButton {
+            background: url("../imgFolder/up.png") no-repeat scroll 0 0; bottom: 10px; right: 10px;
+            position: fixed; width: 50px; height: 50px;
+            cursor: pointer; display: none;
+        }
+</style>
+<!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    
+     <!-- JQuery -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/myScript.js"></script>
+     
+     
+     <script src="../js/jquery.js"></script>
+     <script src="../js/jquery-ui.min.js"></script> 
+     <link rel="stylesheet" href="../css/jquery-ui.min.css">
+</head>
+
+<body>
+<div class="main_container">
+
+<%
+String loginId = (String) session.getAttribute("loginID");
+if(!session.isNew() && session.getAttribute("loginID") != null){
+	adminCls adminClsObj = new adminCls();
+	List<adminModel> selectedAdmin = adminClsObj.getAdminInfo(loginId);
+	for(adminModel userInfo : selectedAdmin ){
+%> 
+<!-- Admin login Navbar -->
+  
+<!-- End Admin login Navbar -->
+<nav class="navbar navbar-inverse navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+            <a class="navbar-brand" href="about.jsp">Welcome : </a>
+            <a class="navbar-brand" href="contact.jsp"><% out.print(userInfo.getAdminName()); %></a>              
+    </div>
+    
+     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="dashboard.jsp">Dashboard</a></li>      
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="../adminLogout?action=logout">LOGOUT</a></li>
+      </ul>
+    </div>
+</nav>
+
+<nav class="adminNav"></nav>
+
+
+<%	
+// session.setAttribute("loginID", null);
+	}
+}
+%>
+ 
+ <!-- body contain section -->
+  <section class="content_area">
+  
+  <%
+int postId = Integer.parseInt(request.getParameter("id"));
+postsCls postClsObj = new postsCls();
+
+List<PostsModel> dataforSingleShow = postClsObj.singleShow(postId);
+
+ for(PostsModel singlePost  : dataforSingleShow){	
+%>
+ 
+<div class="container">
+<div class="row">
+<div class="col-md-12"></div>
+</div>
+
+<div class="row">  <!-- Start row -->
+ <div class="col-md-8">
+ <div class="col-md-12"><h2>Post view: </h2></div>
+  <div class="col-md-12"><hr></div>
+ <div class="col-md-8 col-md-offset-2">
+
+  <%
+  String img = singlePost.getPostImage().toString();
+  
+ if(img.equals("null")){ %>
+	No Image
+<%}else{%>
+    <img src="../imgFolder/<% out.print(singlePost.getPostImage()); %>"  width="500px" height="400px"/> 	
+<%}%>
+  </div>  
+
+ <div class="post col-md-12">
+   <h4><% out.print(singlePost.getPostTitle()); %></h4>
+   <p><%out.print(singlePost.getPostBody()); %></p> 
+  </div>
+   
+ </div>
+ 
+ <div class="col-md-4  well">
+ 
+  <dl class="dl-horizontal">
+  <dt>Category:</dt>
+  <dd>
+   <%
+ String allCatagory = singlePost.getCategory();
+ String[] allCategoryArr = allCatagory.split(",");
+ 
+ for(int i=0; i<allCategoryArr.length; i++){
+	 int CategoryId = Integer.parseInt(allCategoryArr[i]);
+	 	 categoryCls categoryClsObj = new categoryCls();
+	     List<CategoryModel> dataforShow = categoryClsObj.singleShow(CategoryId);
+	     for(CategoryModel singleCategory : dataforShow){ %>
+		    
+		    <p class="btn btn-default"><% out.print(singleCategory.getCategory_title()); %></p>
+		    
+	     <% }
+	
+    }
+ %>
+  </dd>
+  </dl> 
+ 
+ <dl class="dl-horizontal">
+  <dt>Create at :</dt>
+  <dd><%out.print(singlePost.getCreate_at()); %></dd>
+</dl>
+
+ <dl class="dl-horizontal">
+  <dt>Last update :</dt>
+  <dd>
+  <%
+  if(singlePost.getModify_at() == null){
+	  out.print("Not yeat.");
+  }else{
+	  out.print(singlePost.getModify_at()); 
+  }
+   %>
+  </dd>
+</dl>
+<hr>
+<div class="row">
+ <div class="col-md-6">
+   <a href="../editPost?id=<% out.print(singlePost.getId()); %>"" class="btn btn-primary btn-block">Edit</a>
+ </div>
+  <div class="col-md-6">
+   <a href="../deletePost?id=<% out.print(singlePost.getId()); %>" class="btn btn-danger btn-block">Delete</a>
+ </div>
+</div>
+<hr>
+<div class="row">
+ <div class="col-md-12">
+   <a href="dashboard.jsp" class="btn btn-default btn-block"> << Back</a>
+ </div>
+</div>
+
+ </div>
+
+</div> <!-- End Blog body row -->
+
+<% } %>
+  
+   <div class="upDownButton"></div> 
+  </section>
+ <!-- End body contain section -->
+  
+  <footer class="footer_area">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="copyright">
+                        <p>&copy; Copyright Md Imran hossain.</p>
+                    </div>
+                </div>
+            </div>
+        </footer> 
+  </div>     <!-- End container -->
+</div>
+ <script src="../js/bootstrap.min.js"></script>
+</body>
+</html>

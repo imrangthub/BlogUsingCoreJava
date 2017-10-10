@@ -1,0 +1,191 @@
+.adminNav{
+	margin-top: 80px;
+
+}
+.header_area {
+    background: #8080c0;
+    color:#fff;
+    padding: 22px;
+}
+
+.logo h2{
+    margin: 0;
+
+}
+.logo p{
+    margin: 0;
+}
+
+.navbar-default2 {
+    background-color: ivory;
+    border:none;
+}
+
+.nav > li {
+
+    display: block;
+    position: relative;
+}
+.navbar-nav > li > a {
+    border-right: 2px solid #ddd ;
+    line-height: 0;
+}
+.navbar-nav > li:last-child a{
+    border-right: 0;
+
+}
+.navbar-nav {
+    padding:22px;
+}
+.navigation {
+    background: ivory;
+}
+.content_area{
+    background: ivory;
+
+
+}
+.content{
+	
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.3);
+}
+.content_post{
+	
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.3);
+}
+.single_content_post{
+	
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.3);
+}
+.single_post_image {
+	padding: 5px;
+	margin: 1px;
+}
+.single_post_body {
+	padding: 5px;
+	margin-top: 5px;
+}
+.custom_nav{
+    border:1px solid #1b6d85;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+.bar {
+    background: #8080c0;
+    height: 40px;
+    text-align: center;
+    color:white;
+}
+.custom_nav ul{
+    margin: 0;
+    padding: 5px;
+    list-style: none;
+}
+.custom_nav ul li{
+
+}
+.custom_nav ul li a{
+    display: block;
+    padding: 10px;   
+    border-bottom: 1px solid #ddd;
+}
+.custom_nav ul li:last-child a{
+    border-bottom: 0;
+}
+.custom_nav ul li a:hover { 
+	 background: silver;
+
+}
+
+.post_view{}
+.post_view h2{
+    border:1px solid #ddd;
+    margin: 0;
+    font-size: 20px;
+    padding: 10px;
+    background: silver;
+    margin-bottom: 10px;
+}
+.post_view p{}
+
+.post_image {
+	padding: 5px;
+	margin: 1px;
+	height:150px;
+}
+
+.post_imageLast {
+	margin: 1px;
+	height:300px;
+	width:550px;
+}
+
+.post_body {
+	width: 100%;
+	height:100%;
+	font-style: italic;
+}
+
+.about_us{}
+.about_us h2{
+    border:1px solid #ddd;
+    margin: 0;
+    font-size: 20px;
+    padding: 10px;
+    background: silver;
+    margin-bottom: 10px;
+}
+.about_us p{}
+
+
+
+.footer_area{
+    background: blue;
+    text-align: center;
+    color: #fff;
+    margin-top: 10px;
+}
+.copyright{
+    padding: 10px 20px;
+}
+
+.search {
+    border:1px solid #1b6d85;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    overflow: hidden;
+    margin-top: 10px;
+}
+.blackBackground {
+	background-color: black;
+}
+
+.tableBasic {
+width: 100%;
+background-color: silver;
+}
+.tableBasic td {
+	text-align: center;
+}
+
+
+
+
+
+.msg {
+            color: red;
+             font-size: 12px; 
+             margin-left: 10px;
+             margin-top:5px;
+        }
+        
+.upDownButton {
+            background: url("../imgFolder/up.png") no-repeat scroll 0 0; bottom: 10px; right: 10px;
+            position: fixed; width: 50px; height: 50px;
+            cursor: pointer;
+            background-color: red;
+        }

@@ -1,0 +1,4 @@
+<%
+session.setAttribute("userName", null);
+
+%>

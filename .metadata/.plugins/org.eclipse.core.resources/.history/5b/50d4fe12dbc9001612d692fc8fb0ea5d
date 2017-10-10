@@ -1,0 +1,23 @@
+<%@page import="java.sql.*"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+
+ 
+ 
+ <%
+ 
+ String userName = request.getParameter("userName");
+ String email = request.getParameter("email");
+ String password = request.getParameter("password");
+  
+ Class.forName("com.mysql.jdbc.Driver");
+ Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/core_java","root","admin");
+ Statement stmt = conn.createStatement();
+ 
+  int queryResult = stmt.executeUpdate("INSERT INTO `core_java`.`jsp_crud` (`user_name`, `user_email`,`password`, `created_at`) values('"+userName+"','"+email+"','"+password+"'");
+ 
+ 
+ 
+ 
+ 
+ %>

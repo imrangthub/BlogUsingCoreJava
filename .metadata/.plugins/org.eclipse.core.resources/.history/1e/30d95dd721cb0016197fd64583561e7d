@@ -1,0 +1,21 @@
+package ComplesBeansExpLan;
+
+import java.util.Collection;
+
+public class Address {
+	
+	private String line1;
+	private String town;
+	private String country;
+	private String postcode;
+	
+	private Collection phoneNumber;
+	
+	public Address(){
+		this.line1 = "No line update";
+		this.town = "No City";
+		this.country = "No Country";
+		this.postcode = "0000";
+	}
+
+}

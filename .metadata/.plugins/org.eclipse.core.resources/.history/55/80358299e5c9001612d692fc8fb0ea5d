@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@page import="java.sql.*"%>
+<%
+
+String email = request.getParameter("email");
+String password = request.getParameter("password");
+
+if(email.equals("") || email == null || password.equals("") || password == null){
+	 response.sendRedirect("registration.jsp");
+}else{
+	 Class.forName("com.mysql.jdbc.Driver");
+	 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/core_java","root","admin");
+	 Statement stmt = conn.createStatement();
+	 
+	    stmt.executeUpdate("SELECT * FROM `core_java`.`jsp_crud` WHERE `jsp_crud`.`user_email`= '"+email+"'");
+	   response.sendRedirect("regSuccess.jsp");
+}
+
+%>
